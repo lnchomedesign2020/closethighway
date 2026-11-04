@@ -1,6 +1,17 @@
 # company-events
 快客櫃網址:https://www.closethighway.com/
 
+2026
+
+11、12月
+-------------
+全屋年末圓滿盛典
+Whole-House-Year-End-Grand-Ceremony
+
+年終煥新季
+Year-end-Refreshing-Season
+
+-------------
 好鄰居成家計畫
 good-neighbor
 
