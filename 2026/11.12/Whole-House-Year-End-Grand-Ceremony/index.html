@@ -199,14 +199,15 @@
 .hero-offer-value span{font-family:inherit;font-size:clamp(17px,2vw,28px);font-weight:800;color:#9a4e20;flex:0 0 auto}
 .hero-offer-value strong{font-family:'Noto Serif',Georgia,serif;font-size:clamp(27px,3.2vw,48px);font-weight:700;font-style:italic;letter-spacing:.01em;line-height:1;background:linear-gradient(105deg,#9b4b1d 0%,#d88949 48%,#a84f20 100%);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto}
 @media(max-width:700px){
-  /* 手機版主視覺已包含優惠級距圖，隱藏桌機用 HTML 覆蓋層，避免重疊並遮住下方服務圖示。 */
-  .hero{display:flex;flex-direction:column;gap:18px;padding:28px 16px 32px;background:linear-gradient(160deg,#fffaf3,#eee2d3);line-height:1.5}
-  .hero > img{display:none!important}
-  .hero .hero-mobile-heading{display:block;text-align:center;color:#5b3b25}
+  /* 手機版保留主視覺作為淡化底圖，標題與優惠卡片置於前景。 */
+  .hero{display:flex;flex-direction:column;gap:18px;padding:28px 16px 32px;min-height:430px;background:linear-gradient(160deg,rgba(255,250,243,.84),rgba(238,226,211,.9));line-height:1.5;isolation:isolate}
+  .hero > img:first-of-type{display:block!important;position:absolute;z-index:-1;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 35%;opacity:.22;filter:blur(1px)}
+  .hero > img.hero-benefits{display:none!important}
+  .hero .hero-mobile-heading{position:relative;z-index:1;display:block;text-align:center;color:#5b3b25}
   .hero-mobile-heading span{display:inline-block;padding:5px 12px;border-radius:20px;background:#ead4b2;color:#72502f;font-size:12px;font-weight:700;letter-spacing:.04em}
   .hero-mobile-heading h1{margin:14px 0 4px;font-size:clamp(27px,7vw,36px);line-height:1.3;letter-spacing:.05em}
   .hero-mobile-heading p{margin:0;color:#8b7663;font-size:14px}
-  .hero .hero-offer-overlay{position:static;display:block;width:100%;height:auto;padding:12px;background:rgba(255,248,239,.9);border:1px solid #e3cfb6;border-radius:20px}
+  .hero .hero-offer-overlay{position:relative;z-index:1;display:block;width:100%;height:auto;padding:12px;background:rgba(255,248,239,.94);border:1px solid #e3cfb6;border-radius:20px}
   .hero-offer-grid{gap:20px 10px}
   .hero-offer-card{min-height:90px;padding:20px 6px 10px;border-radius:14px}
   .hero-offer-card:before{inset:5px;border-radius:10px}
