@@ -197,7 +197,10 @@
 .hero-offer-value{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;width:100%;white-space:nowrap;color:#a64e35;text-align:center}
 .hero-offer-value span{font-family:inherit;font-size:clamp(17px,2vw,28px);font-weight:800;color:#9a4e20;flex:0 0 auto}
 .hero-offer-value strong{font-family:'Noto Serif',Georgia,serif;font-size:clamp(27px,3.2vw,48px);font-weight:700;font-style:italic;letter-spacing:.01em;line-height:1;background:linear-gradient(105deg,#9b4b1d 0%,#d88949 48%,#a84f20 100%);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto}
-@media(max-width:700px){.hero .hero-offer-overlay{left:16%;top:43%;width:68%;height:43%;padding:1.5%;border-radius:14px}.hero-offer-grid{gap:10px 3%}.hero-offer-card{padding:20px 5px 7px;border-radius:12px}.hero-offer-card:before{inset:4px;border-radius:8px}.hero-offer-label{top:-9px;padding:3px 8px 4px;font-size:clamp(10px,2.5vw,15px)}.hero-offer-value{gap:5px}.hero-offer-value span{font-size:clamp(12px,2.6vw,17px)}.hero-offer-value strong{font-size:clamp(18px,4vw,27px)}}
+@media(max-width:700px){
+  /* 手機版主視覺已包含優惠級距圖，隱藏桌機用 HTML 覆蓋層，避免重疊並遮住下方服務圖示。 */
+  .hero .hero-offer-overlay{display:none}
+}
 
 
 /* 第二區優惠數字尺寸修正：確保金額完整置於卡片框內 */
