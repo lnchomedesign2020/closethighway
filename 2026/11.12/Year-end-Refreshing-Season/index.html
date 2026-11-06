@@ -166,7 +166,7 @@
   }
 }
 
-</style>
+.space-card{cursor:pointer}.space-card:focus-visible{outline:3px solid var(--gold);outline-offset:4px}\n</style>
 </head>
 <body>
 <main>
@@ -259,6 +259,12 @@
 </section>
 </main><footer>寶元快客櫃｜高質感系統櫃專家</footer>
 <script>
-const counters=document.querySelectorAll('.saving-amount');const fmt=n=>Math.round(n).toLocaleString('en-US');function animate(el){if(el.dataset.done==='1')return;el.dataset.done='1';const target=Number(el.dataset.count),start=performance.now(),duration=1300,out=el.querySelector('.count');function tick(now){const p=Math.min((now-start)/duration,1),ease=1-Math.pow(1-p,3);out.textContent=fmt(target*ease);if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)}if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){animate(e.target);io.unobserve(e.target)}}),{threshold:.35});counters.forEach(c=>io.observe(c))}else counters.forEach(animate);
+const spaceUrls={
+  '客廳':'https://www.closethighway.com/products?category%5B%5D=d1fdae78-3356-4983-976d-59e78fb15332&category%5B%5D=cdd50c74-eebd-47d4-ae72-7b0dd4bc1070&topCategory=cdad5f4a-14d8-44bc-89fd-8f80ab1a073f&keyword=&price_start=&price_end=&price_order_by=0&width_start=&width_end=#',
+  '臥室':'https://www.closethighway.com/products?category%5B%5D=7d119fab-4008-493f-96f0-f25c82cc2ba6&category%5B%5D=7a1c611a-1015-469d-a832-4345385d7b78&category%5B%5D=7996575f-c712-4005-9731-f7a0d5505c93&topCategory=cdad5f4a-14d8-44bc-89fd-8f80ab1a073f&keyword=&price_start=&price_end=&price_order_by=0&width_start=&width_end=#',
+  '餐廚':'https://www.closethighway.com/products?category%5B%5D=fb0d4622-4b00-44c5-aadf-3ae538261d13&category%5B%5D=284b578c-a8db-42d1-8739-5e1c92a56fd1&topCategory=cdad5f4a-14d8-44bc-89fd-8f80ab1a073f&keyword=&price_start=&price_end=&price_order_by=0&width_start=&width_end=#',
+  '玄關':'https://www.closethighway.com/products?category%5B%5D=105780ce-00ff-4174-bcb9-46c74c376f83&topCategory=cdad5f4a-14d8-44bc-89fd-8f80ab1a073f&keyword=&price_start=&price_end=&price_order_by=0&width_start=&width_end=#'
+};
+document.querySelectorAll('.space-card').forEach((card,index)=>{const titles=['客廳空間','臥室空間','餐廚空間','玄關空間'];card.setAttribute('role','link');card.setAttribute('tabindex','0');const title=titles[index]||'空間';card.setAttribute('aria-label',`在新分頁開啟${title}商品頁`);const open=()=>window.open(spaceUrls[['客廳','臥室','餐廚','玄關'][index]]||spaceUrls['客廳'],'_blank','noopener,noreferrer');card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});const counters=document.querySelectorAll('.saving-amount');const fmt=n=>Math.round(n).toLocaleString('en-US');function animate(el){if(el.dataset.done==='1')return;el.dataset.done='1';const target=Number(el.dataset.count),start=performance.now(),duration=1300,out=el.querySelector('.count');function tick(now){const p=Math.min((now-start)/duration,1),ease=1-Math.pow(1-p,3);out.textContent=fmt(target*ease);if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)}if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){animate(e.target);io.unobserve(e.target)}}),{threshold:.35});counters.forEach(c=>io.observe(c))}else counters.forEach(animate);
 </script>
 </body></html>
